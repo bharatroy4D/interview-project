@@ -1,39 +1,39 @@
-import Main from "../layout/Main";
+import Root from "../layout/Root";
 import Abouts from "../pages/abouts/Abouts";
 import Contacts from "../pages/contacts/Contacts";
 import Home from "../pages/home/Home";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 
-const { createBrowserRouter } = require("react-router-dom");
+import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Main />,
+        element: <Root />,
         children: [
             {
-                path: "/",
+                path: "/",      // Home
                 element: <Home />
             },
             {
-                path: "/",
+                path: "about",  // 👉 /about
                 element: <Abouts />
             },
             {
-                path: "/",
+                path: "contact", // 👉 /contact
                 element: <Contacts />
             },
             {
-                path: "/",
+                path: "login",   // 👉 /login
                 element: <Login />
             },
             {
-                path: "/",
+                path: "register", // 👉 /register
                 element: <Register />
             },
         ]
-
     }
-])
+]);
+
 export default router;
