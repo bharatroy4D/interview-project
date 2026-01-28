@@ -3,7 +3,7 @@ import banner from '../../../assets/book-white-removebg-preview.png';
 
 const Banner = () => {
     return (
-        <section className="bg-gradient-to-br from-green-500 to-blue-300 py-20">
+        <section className="bg-gradient-to-br from-green-400 to-blue-300 py-20">
             <div className="container mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-10">
 
                 {/* Left Content */}

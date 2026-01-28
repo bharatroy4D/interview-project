@@ -5,11 +5,8 @@ const Pagination = ({ currentPage, totalItems, pageSize, onPageChange }) => {
   const totalPages = Math.ceil(totalItems / pageSize);
 
   const pageWindowSize = 4;
-
   const currentGroup = Math.floor((currentPage - 1) / pageWindowSize);
-
   const startPage = currentGroup * pageWindowSize + 1;
-
   const endPage = Math.min(startPage + pageWindowSize - 1, totalPages);
 
   const pages = [];
@@ -18,39 +15,46 @@ const Pagination = ({ currentPage, totalItems, pageSize, onPageChange }) => {
   }
 
   return (
-    <div className="flex justify-center mt-6 gap-2">
+    <div className="w-full flex justify-center mt-6">
 
-      {/* Previous */}
-      <button
-        onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
-        className="flex items-center gap-2 px-4 text-gray-700 disabled:bg-gray-200 disabled:text-gray-400"
-      >
-        <MdKeyboardDoubleArrowLeft /> Previous
-      </button>
+      {/* SCROLLABLE WRAPPER */}
+      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar px-2 py-1 max-w-[300px] sm:max-w-full">
 
-      {/* Page Buttons */}
-      {pages.map((page) => (
+        {/* Previous */}
         <button
-          key={page}
-          onClick={() => onPageChange(page)}
-          className={`px-4 py-2 border rounded-md 
-            ${currentPage === page ? "bg-cyan-600 text-white" : "bg-white text-gray-700"}
-          `}
+          onClick={() => onPageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+          className="flex items-center gap-2 px-4 py-2 border rounded-md text-gray-700 bg-white disabled:bg-gray-200 disabled:text-gray-400 whitespace-nowrap"
         >
-          {page}
+          <MdKeyboardDoubleArrowLeft /> Previous
         </button>
-      ))}
 
-      {/* Next */}
-      <button
-        onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-        className="flex items-center gap-2 justify-center px-4 text-gray-700 disabled:bg-gray-200 disabled:text-gray-400"
-      >
-        <span className="flex justify-center items-center gap-2">Next <MdKeyboardDoubleArrowRight /></span>
+        {/* Page Buttons */}
+        {pages.map((page) => (
+          <button
+            key={page}
+            onClick={() => onPageChange(page)}
+            className={`px-4 py-2 border rounded-md whitespace-nowrap
+            ${
+              currentPage === page
+                ? "bg-cyan-600 text-white"
+                : "bg-white text-gray-700 hover:bg-gray-100"
+            }`}
+          >
+            {page}
+          </button>
+        ))}
 
-      </button>
+        {/* Next */}
+        <button
+          onClick={() => onPageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          className="flex items-center gap-2 px-4 py-2 border rounded-md text-gray-700 bg-white disabled:bg-gray-200 disabled:text-gray-400 whitespace-nowrap"
+        >
+          Next <MdKeyboardDoubleArrowRight />
+        </button>
+
+      </div>
     </div>
   );
 };
