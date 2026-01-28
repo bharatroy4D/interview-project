@@ -40,7 +40,7 @@ const Header = () => {
                         <Link
                             key={route.path}
                             to={route.path}
-                            className="hover:text-cyan-400 transition-all duration-300 hover:scale-105"
+                            className="hover:text-cyan-600 transition-all duration-300 hover:scale-105"
                         >
                             {route.label}
                         </Link>
