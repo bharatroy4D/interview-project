@@ -1,14 +1,13 @@
-import Navbar from "../components/Navbar";
-import SideBar from "../Components/SideBar/SideBar";
+import Sidebar from "../Components/SideBar/SideBar";
+import Dashboard from "../pages/dashboard/Dashboard";
 
-const DashboardLayout = ({ children }) => {
+const DashboardLayout = () => {
   return (
     <div className="flex min-h-screen">
-      <SideBar />
+      <Sidebar />
       <div className="flex-1">
-        <Navbar />
         <main className="p-6 bg-gray-100 min-h-screen">
-          {children}
+            <Dashboard/>
         </main>
       </div>
     </div>

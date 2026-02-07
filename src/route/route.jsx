@@ -1,3 +1,4 @@
+import DashboardLayout from "../layout/DashboardLayout";
 import Root from "../layout/Root";
 import Abouts from "../pages/abouts/Abouts";
 import Contacts from "../pages/contacts/Contacts";
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
     },
     {
         path: "dashboard", // 👉 /dashboard
-        element: <Dashboard />
+        element: <DashboardLayout />
     },
 
 ]);

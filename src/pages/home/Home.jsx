@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from './banner/Banner';
 import Products from './products/Products';
-import Navbar from './navbar/Navbar';
+// import Navbar from './navbar/Navbar';
 
 const Home = () => {
     return (
