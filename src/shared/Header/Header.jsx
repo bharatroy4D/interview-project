@@ -7,6 +7,7 @@ const routes = [
     { path: "/abouts", label: "About" },
     { path: "/contacts", label: "Contact" },
     { path: "/login", label: "Login" },
+    { path: "/dashboard", label: "Dashboard" },
 ];
 
 const Header = () => {

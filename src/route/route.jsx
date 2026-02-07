@@ -1,6 +1,7 @@
 import Root from "../layout/Root";
 import Abouts from "../pages/abouts/Abouts";
 import Contacts from "../pages/contacts/Contacts";
+import Dashboard from "../pages/dashboard/Dashboard";
 import Home from "../pages/home/Home";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path: "register", // 👉 /register
                 element: <Register />
+            },
+            {
+                path: "dashboard", // 👉 /dashboard
+                element: <Dashboard />
             },
         ]
     }
