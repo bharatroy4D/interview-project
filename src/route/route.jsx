@@ -33,12 +33,14 @@ const router = createBrowserRouter([
                 path: "register", // 👉 /register
                 element: <Register />
             },
-            {
-                path: "dashboard", // 👉 /dashboard
-                element: <Dashboard />
-            },
+
         ]
-    }
+    },
+    {
+        path: "dashboard", // 👉 /dashboard
+        element: <Dashboard />
+    },
+
 ]);
 
 export default router;
